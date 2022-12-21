@@ -1,0 +1,29 @@
+<h2>Demo Bindings</h2>
+<div>
+    <h3>Property binding</h3>
+    <div>
+        <h4>One way binding</h4>
+        <p>Bonjour et bienvenu {{prenom}}</p>
+        <h4>Two way binding</h4>
+        <input type="text" [(ngModel)]="prenom2">
+        <p>Ah mucho gusto {{prenom2}}</p>
+    </div>
+</div>
+<div>
+    <h3>Event binding</h3>
+    <p>Aujourd'hui nous sommes {{jour}}</p>
+    <button (click)="changerJour('lundi')">Lundi</button>
+    <button (click)="changerJour('mardi')">Mardi</button>
+    <button (click)="changerJour('mercredi')">Mercredi</button>
+    <button (click)="changerJour('jeudi')">Jeudi</button>
+    <button (click)="changerJour('vendredi')">Vendredi</button>
+    <button (click)="changerJour('samedi')">Samedi</button>
+    <button (click)="changerJour('dimanche')">Dimanche</button>
+</div>
+<div>
+    <h3>Attribute binding</h3>
+    <p>Pas mal utilisé sur les booléen</p> 
+    <div [id]="id">Ma Super Div</div>
+    <button [disabled]="!isActive">Click Me</button>
+    <button (click)="toggleActive()">Activer/Desactiver</button>
+</div>

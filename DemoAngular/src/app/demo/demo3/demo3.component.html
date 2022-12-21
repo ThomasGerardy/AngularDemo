@@ -1,0 +1,51 @@
+<h2>Les directives</h2>
+<div>
+    <h3>Component directives</h3>
+    <div class="chapter">
+        <h4>ngModel</h4>
+        <p>Aujourd'hui on a mangé {{plat}}</p>
+        <input type="text" [(ngModel)]="plat">
+        <h4>ngStyle</h4>
+        <p [ngStyle]="{color: myColor}"> Joyeux Noël</p>
+        <h4>ngClass</h4>
+        <p [ngClass]="{gros : isGros, gras : isGras, italique : isItalique}" >C'est bientôt le weekend</p>
+        <button (click)="toggleGras()">Pas gras/Gras</button>
+        <button (click)="toggleGros()">Pas gros/Gros</button>
+        <button (click)="toggleItalique()">Pas italique/Italique</button>
+    </div>
+</div>
+<h3>Structural directives</h3>
+<div class="chapter">
+    <div>
+        <h4>ngIf</h4>
+        <div *ngIf="isJour">🌞 Jour 🌞</div>
+        <div *ngIf="!isJour">🌜Nuit🌛</div>
+        <button (click)="toggleJour()">Switch Jour/Nuit</button>
+    </div>
+    <div>
+        <h4>ngFor</h4>
+        <div class="cards">
+            <div *ngFor="let formateur of formateurs; let i = index" class="card"> 
+                <div>Formateur Pref n°{{i+1}}</div>
+                <img [src]="formateur.avatar" [alt]="formateur.prenom">
+                <div>{{formateur.prenom}} {{formateur.nom}}</div>
+                <div>{{formateur.dateNaiss | date : 'dd/MM/yyyy'}}</div>
+                <div *ngIf="formateur.animal">{{formateur.animal}}</div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h4>ngSwitch</h4>
+        <input type="text" placeholder="Entrez votre choix entre 1 et 3" [(ngModel)]="choix">
+        <div  [ngSwitch]="choix">
+            <div *ngSwitchCase="1">Voici votre café</div>
+            <div *ngSwitchCase="2">Voici votre thé</div>
+            <div *ngSwitchCase="3">Voici votre soda</div>
+            <div *ngSwitchDefault>Vous avez entré un choix invalide</div>
+    </div>
+    </div>
+</div>
+<h3>Custom directives</h3>
+<div class="chapter">
+    <p>Lorem ipsum dolor sit amet consectetur <span highlight>adipisicing</span> elit. Distinctio, rerum <span highlight>quaerat</span>laudantium praesentium <span highlight>cum </span>temporibus maxime accusamus odio nisi. Veniam voluptas cumque facere a repellendus? Nulla quam nemo sit qui.</p>
+</div>

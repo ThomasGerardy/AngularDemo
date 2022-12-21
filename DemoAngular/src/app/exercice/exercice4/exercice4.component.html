@@ -1,0 +1,65 @@
+<h2>Exercice 4 : Les formulaires</h2>
+<div class="chapter">
+    <h3>Enregistrement :</h3>
+    <form (ngSubmit)="submitForm()" [formGroup]="signinForm">
+        <div>
+            <input type="text" placeholder="Nis" formControlName="nis">
+            <span *ngIf="signinForm.get('nis')?.touched && signinForm.get('nis')?.errors?.['required']">Le nis est requis</span>
+            <span *ngIf="signinForm.get('nis')?.touched && signinForm.get('nis')?.errors?.['min']">Le nis doit contenir au moins 11 chiffres</span>
+            <span *ngIf="signinForm.get('nis')?.touched && signinForm.get('nis')?.errors?.['max']">Le nis ne peut pas contenir plus de 11 chiffres</span>
+        </div>
+        <div>
+            <input type="text" placeholder="Nom" formControlName="name">
+            <span *ngIf="signinForm.get('name')?.touched && signinForm.get('name')?.errors?.['required']">Le nom est requis</span>
+            <span *ngIf="signinForm.get('name')?.touched && signinForm.get('name')?.errors?.['minlength']">Le nom doit contenir minimum 2 caractères</span>
+            <span *ngIf="signinForm.get('name')?.touched && signinForm.get('name')?.errors?.['maxlength']">Le nom doit contenir au minimum 50 caractères</span>
+        </div>
+        <div>
+            <input type="text" placeholder="Prénom" formControlName="firstname">
+            <span *ngIf="signinForm.get('firstname')?.touched && signinForm.get('firstname')?.errors?.['required']">Le prénom est requis</span>
+            <span *ngIf="signinForm.get('firstname')?.touched && signinForm.get('firstname')?.errors?.['minlength']">Le prénom doit contenir minimum 2 carctères</span>
+            <span *ngIf="signinForm.get('firstname')?.touched && signinForm.get('firstname')?.errors?.['maxlength']">le prénom doit contenir maximum 50 caractères</span>          
+        </div>
+        <div>
+            <input type="date" placeholder="Date de naissance" formControlName="birthdate">
+            <span *ngIf="signinForm.get('birthdate')?.touched && signinForm.get('birthdate')?.errors?.['required']"></span>
+            <span *ngIf="signinForm.get('birthdate')?.touched && signinForm.get('birthdate')?.errors?.['mineur']"></span>
+            
+        </div>
+        <div>
+            <legend>Genre</legend>
+            <input id="male" type="radio" value="m" formControlName="gender"><label for="gender">M</label>
+            <input type="radio" value ="f" formControlName="gender"><label for="female">F</label>
+            <span *ngIf="signinForm.get('gender')?.touched && signinForm.get('gender')?.errors?.['required']">Le genre est requis</span>
+        </div>
+        <div>
+            <select name="" id="" formControlName="accounttype">
+                <option value="" hidden>Type de compte</option>
+                <option value="student">Etudiant</option>
+                <option value="pro">Professionel</option>
+                <option value="part">Particulier    </option>
+            </select>
+        </div>
+        <div>
+            <input type="text" placeholder="Numéro de téléphone" formControlName="phone">
+        </div>
+        <div>
+            <input type="email" placeholder="Email" formControlName="mail">
+            <span *ngIf="signinForm.get('mail')?.touched && signinForm.get('mail')?.errors?.['required']">L'email est requis</span>
+            <span *ngIf="signinForm.get('mail')?.touched && signinForm.get('mail')?.dirty && signinForm.get('mail')?.errors?.['email']">Format d'email incorrecct</span>
+        </div>
+        <div>
+            <input type="password" placeholder="Mot de passe" formControlName="password">
+            <span *ngIf="signinForm.get('password')?.touched && signinForm.get('password')?.errors?.['required']">Le mot de passe est requis</span>
+            <span *ngIf="signinForm.get('password')?.touched && signinForm.get('password')?.dirty && signinForm.get('password')?.errors?.['pattern']">Le mot de passe doit contenir au moins 8 carctères dont : 1 majuscule, 1 minuscule, 1 chiffre et un caractère spécial</span>
+        </div>
+        <div>
+            <input type="password" placeholder="Confirmation de mot de passe" formControlName="confirmpassword">
+            <span *ngIf="signinForm.get('confirmpassword')?.touched && signinForm.get('confirmpassword')?.dirty && signinForm.get('confirmpassword')?.errors?.['required']"></span>
+        </div>
+
+        <div>
+            <input type="submit" value="Créer mon compte">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,13 @@
+<nav class="navbar">
+    <ul>
+        <li *ngFor="let item of links; let i = index">
+        <a (click)="toggleNav(i)" [ngClass]="{visible: item.isVisible}" [routerLink]="item.url" > {{item.title}} </a>
+            <ul *ngIf="item.isVisible">
+                <li *ngFor="let toto of item.children">
+                    <a [routerLink]="item.url + '' +toto.url"> {{toto.title}}</a>
+                </li>
+                
+            </ul>
+        </li>
+    </ul>
+</nav>

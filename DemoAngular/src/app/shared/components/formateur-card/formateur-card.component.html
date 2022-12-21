@@ -1,0 +1,7 @@
+<div class="card">
+    <div>Formateur Pref n°{{formateur.id}}</div>
+    <img [src]="formateur.avatar" [alt]="formateur.prenom">
+    <div>{{formateur.prenom}} {{formateur.nom}}</div>
+    <div>{{formateur.dateNaiss | date : 'dd/MM/yyyy'}}</div>
+    <button (click)="envoieNom()">C'est moi</button>
+</div>

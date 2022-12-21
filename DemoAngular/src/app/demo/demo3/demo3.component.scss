@@ -1,0 +1,27 @@
+.gros{
+    font-size: 38px;
+}
+.gras{
+    font-weight: bold;
+}
+.italique{
+    font-style: italic;
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    width : 12%;
+    padding : 2% 1%;
+    margin: 2%;
+    text-align:  center;
+    background-color: aliceblue;
+
+}
+.card *{
+    margin-bottom:  10%;
+}
+.card img{
+    width : 100px
+}

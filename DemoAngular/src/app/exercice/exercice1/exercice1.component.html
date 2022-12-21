@@ -1,0 +1,5 @@
+<h2>Timer :</h2>
+<div>{{compteurSeconde | toTimer}}</div>
+<button (click)="demareChrono()" [disabled]="isActive">Start</button>
+<button (click)="pause()" [disabled]="!isActive">Pause</button>
+<button (click)="reset()" [disabled]="!isResetable">Reset</button>

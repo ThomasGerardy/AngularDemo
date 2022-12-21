@@ -1,0 +1,10 @@
+<h3>Panier : </h3>
+<ul>
+    <li *ngFor="let item of panier; let id = index">
+        <div>{{item.name}}</div>
+        <div>{{item.quantity}}</div>
+        <button (click)="remove(id)">➖</button>
+        <button (click)="add(id)">➕</button>
+        <button (click)="del(id)">🗑️</button>
+    </li>
+</ul>

@@ -1,0 +1,13 @@
+<h2>Services</h2>
+<div class="chapter">
+    <div *ngIf="!connectedUser">
+        <input type="text" placeholder="Pseudo" [(ngModel)]="pseudo">
+        <input type="text" placeholder="Mot de Passe" [(ngModel)]="pwd">
+        <button (click)="connect()">Se connecter</button>
+    </div>
+
+    <div *ngIf="connectedUser">
+        <p>Bonjour {{connectedUser.firstName}}</p>
+        <button (click)="disconnect()">Se déconnecter</button>
+    </div>
+</div>

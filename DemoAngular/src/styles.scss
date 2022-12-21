@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin:0;
+    padding: 0;
+}
+.chapter{
+    background-color: lightblue;
+    margin : 1em;
+    padding: 1em;
+}
+.container{
+    display: flex;
+    height: auto;
+}
+
+.menu{
+    width: 20vw;
+    min-height: 100vh;
+    background-color: lightblue;
+    
+}
+
+.contenu{
+    width: 80%;
+    background-color: lightgray;
+    padding: 1% 2%;
+}
+span{
+    color : darkred;
+    font-size: small;
+    font-style: italic;
+}

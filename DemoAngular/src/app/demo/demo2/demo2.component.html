@@ -1,0 +1,25 @@
+<h2>Les Pipes</h2>
+<div>
+    <h3>Les pipes de bases</h3>
+    <div>
+        <p>Ma chaine avant pipe : {{maChaine}}</p>
+        <p>Ma chaine toute en majuscule : {{maChaine | uppercase}}</p>
+        <p>Ma chaine toute en minuscule : {{maChaine | lowercase}}</p>
+        <p>Ma chaine toute en skyblog {{maChaine | titlecase}}</p>
+    </div>
+    <div>
+        <p>Mon nombre avant pipe : {{monNombre}}</p>
+        <p>Mon nombre arrondi : {{monNombre | number : '1.0-2'}}</p>
+    </div>
+    <div>
+        <p>Ma date avant pipe : {{maDate}}</p>
+        <p>Ma date formater avec pipe : {{maDate | date : 'dd - MM - yy'}}</p>
+    </div>
+</div>
+<div>
+    <h3>Les custom pipes</h3>
+    <p>Ma température en degré Telsius : {{maTemperature}}</p>
+    <p>Ma température en degré Fahrenheit : {{maTemperature | toFahrenheit | number : '1.0-1'}}</p>
+    <p>Ma température de F en C : {{maTemperatureF | convertTemp : 'c' | number : '1.0-1'}}</p>
+    <p>Ma température de C en F : {{maTemperatureC | convertTemp : 'f' | number : '1.0-1'}}</p>
+</div>

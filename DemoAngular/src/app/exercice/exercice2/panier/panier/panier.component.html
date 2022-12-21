@@ -1,0 +1,10 @@
+<h3>Mon panier : </h3>
+<div>
+    <ul>
+        <li *ngFor="let item of elements; let i = index">{{item.name}} : {{item.quantity}} pcs 
+            <button (click)="downElem(item)">-</button>
+            <button (click)="uppElem(item)">+</button>
+            <button (click)="delElem(item)">Supprimer</button>
+        </li>
+    </ul>
+</div>
