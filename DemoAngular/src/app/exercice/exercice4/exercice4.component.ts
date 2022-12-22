@@ -21,8 +21,15 @@ export class Exercice4Component {
       mail : [null, [Validators.required, Validators.email]],
       password : [null, [Validators.required, Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/)]],
       confirmpassword : [null, []],
-      hasadress : [null, [Validators.required]],
-    }, { validators : this.mustMatch() })
+      hasadress : [null, []],
+      street : [null, []],
+      number : [null, []], //TODO : faire en deux formulaire
+      box : [null, []],
+      codepostal : [null, [Validators.min(1000), Validators.max(9999)]],
+      city : [null, []],
+      country : [null, []]
+
+    }, { validators : [this.mustMatch]})
   }
   majeurValidator() : ValidatorFn | null{
     return (control : AbstractControl) => {
@@ -46,12 +53,11 @@ export class Exercice4Component {
     }
   }
 
-  mustMatch() : ValidatorFn | null {
-    return (form : AbstractControl) => {
-      if(form.get('password')?.value === form.get('confirmpassword')?.value)
+  mustMatch(form : FormGroup) : any  {
+    if(form.get('password')?.value !== form.get('confirmpassword')?.value)
         return { pwdcheck : true}
       return null
     }
   }
-}
+
  

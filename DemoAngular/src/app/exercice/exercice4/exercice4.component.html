@@ -55,9 +55,37 @@
         </div>
         <div>
             <input type="password" placeholder="Confirmation de mot de passe" formControlName="confirmpassword">
-            <span *ngIf="signinForm.get('confirmpassword')?.touched && signinForm.get('confirmpassword')?.dirty && signinForm.get('confirmpassword')?.errors?.['required']"></span>
+            <span *ngIf="signinForm.get('confirmpassword')?.touched && signinForm.get('confirmpassword')?.dirty && signinForm.get('confirmpassword')?.errors?.['required']">La confirmation du mot de passe est requise</span>
+            <span *ngIf="signinForm.get('confirmpassword')?.touched && signinForm.get('confirmpassword')?.dirty && signinForm.errors?.['pwdcheck']">Les mots de passe ne correspondent pas</span>
         </div>
+        <div>
+            <input type="checkbox" formControlName="hasadress"><label for="">Adresse</label>
+        </div>
+        <div *ngIf="signinForm.get('hasadress')?.value">
+            <div>
+                <div>
+                    <input type="text" placeholder="Rue" formControlName="street">
+                </div>
+                <div>
+                    <input type="text" placeholder="Numéro" formControlName="number">
+                </div>
+                <div>
+                    <input type="text" placeholder="Boite" formControlName="box">
+                </div>
+                <div>
+                    <input type="text" placeholder="Code Postal" formControlName="codepostal">
+                </div>
+                <div>
+                    <input type="text" placeholder="Ville" formControlName="city">
+                </div>
+                <div>
+                    <input type="text" placeholder="Pays" formControlName="country">
+                </div>
+            </div>
 
+        </div>
+        
+        
         <div>
             <input type="submit" value="Créer mon compte">
         </div>
