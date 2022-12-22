@@ -23,7 +23,8 @@ export class NavbarComponent {
         { title : 'Demo 3 - Les Directives', url : '/demo3' },
         { title : 'Demo 4 - Input & Ouput', url : '/demo4' },
         { title : 'Demo 5 - Services', url : '/demo5' },
-        { title : 'Demo 6 - Les Formulaire', url : '/demo6'}
+        { title : 'Demo 6 - Les Formulaire', url : '/demo6'},
+        { title : 'Demo 7 - Routing -> Fake Crud complet', url :'/demo7'}
       ],
       isVisible : false
     },
