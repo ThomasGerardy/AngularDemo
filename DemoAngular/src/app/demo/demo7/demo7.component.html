@@ -1,1 +1,26 @@
 <h2>Routing et Fake Crud</h2>
+<div class="chapter">
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let formateur of list">
+                <td>{{formateur.nom}}</td>
+                <td>{{formateur.prenom}}</td>
+                <td>
+                    <a routerLink="/demo/updateFormateur/{{formateur.id}}"><button>📝</button></a>
+                    <button (click)="delete(formateur.id)">🗑️</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a routerLink="/demo/ajoutFormateur"><button >Ajouter un formateur</button></a>
+</div>

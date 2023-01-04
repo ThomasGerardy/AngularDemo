@@ -1,0 +1,15 @@
+table, tr, td, th{
+    border : 1px solid black;
+    border-collapse: collapse;
+    width: 80%;
+}
+td, th {
+    width : 45%;
+    padding: 1%;
+}
+tr:last-child{
+    width: 10%;
+}
+div button{
+    margin: 2%;
+}

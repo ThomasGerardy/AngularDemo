@@ -45,7 +45,7 @@ export class FormateurService {
   getById(id : number) : IFormateur | undefined{
     return this._formateurs.find( f => f.id === id)
   }
-  create(formateur : IFormateur){
+  create(formateur : IFormateur) : void{
     let newId = Math.max(...this._formateurs.map( f => f.id))+1
     formateur.id = newId
     this._formateurs.push(formateur)
